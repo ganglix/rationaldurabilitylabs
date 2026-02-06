@@ -16,7 +16,7 @@ sections:
     content:
       title: Turn corrosion uncertainty into defensible service-life decisions.
       text: >-
-        We quantify corrosion risk, service-life, and life-cycle cost
+        We quantify corrosion risk, service-life, and life-cycle deterioration
         so owners and engineers can time interventions with confidence.
       primary_action:
         text: View the Durability Insight Assessment (DIA™)
@@ -67,7 +67,7 @@ sections:
       title: Minimum viable offering
       text: >-
         The **Durability Insight Assessment (DIA™)** transforms existing asset data
-        into quantified corrosion risk, service-life envelopes, and life-cycle cost trade-offs.
+        into quantified corrosion risk, service-life envelopes, and intervention timing and effectiveness trade-offs.
       button:
         text: View deliverables
         url: /#offer
@@ -103,13 +103,13 @@ sections:
             - Parameter extraction from polarization data
             - Material and fabrication ranking
             - Environment-calibrated interpretation
-        - name: Life-cycle cost optimization
+        - name: Life-cycle deterioration & intervention optimization
           icon: calculator
-          description: Probabilistic deterioration translated into decisions.
+          description: Probabilistic deterioration modelling translated into targeted, effective intervention strategies.
           points:
             - P10 / P50 / P90 service-life envelopes
-            - Intervention timing trade-offs
-            - Portfolio prioritization
+            - Intervention timing and effectiveness comparison
+            - Portfolio-level prioritization under uncertainty
 
   # --------------------------------------------------
   # OFFER
@@ -125,9 +125,9 @@ sections:
           feature_icon: check
           features:
             - Corrosion risk profile - Dominant mechanisms and sensitivity drivers
-            - Service-life envelope - Probabilistic life estimates (P10/P50/P90)
-            - Life-cycle cost trade-offs - Timing-sensitive intervention economics
-            - Prioritized actions - Ranked intervention classes and triggers
+            - Probabilistic service-life envelope - P10/P50/P90 service-life projections
+            - Intervention timing and effectiveness comparison - Timing-sensitive intervention strategy comparison
+            - Prioritized intervention actions - Ranked intervention classes and triggers
 
         - title: Required inputs
           text: >-

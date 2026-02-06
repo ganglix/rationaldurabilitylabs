@@ -74,9 +74,17 @@ body.page-wrapper {
 }
 
 .page-header .navbar-brand svg {
-  width: auto;
-  height: 28px;
-  max-width: 220px;
+  display: none !important;
+}
+
+.page-header .navbar-brand::before {
+  content: "";
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: conic-gradient(from 210deg, var(--rdl-accent), var(--rdl-accent-2), var(--rdl-good), var(--rdl-accent));
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 8px 20px rgba(0, 0, 0, 0.22);
+  flex: 0 0 auto;
 }
 
 .page-header #nav-menu .nav-link {
@@ -133,7 +141,7 @@ body.page-wrapper {
     column-gap: 10px;
     row-gap: 1px;
     align-items: center;
-    font-size: clamp(17px, 1.2vw, 23px);
+    font-size: clamp(21px, 1.62vw, 31px);
     font-weight: 800;
     line-height: 1.02;
     letter-spacing: 0.1px;
@@ -156,7 +164,7 @@ body.page-wrapper {
   .page-header .navbar-brand::after {
     content: "Durability intelligence for corrosion-critical infrastructure";
     grid-column: 2;
-    font-size: clamp(11px, 0.8vw, 14px);
+    font-size: clamp(8px, 0.56vw, 11px);
     font-weight: 600;
     line-height: 1.08;
     color: var(--rdl-muted);
