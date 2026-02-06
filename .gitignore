@@ -28,6 +28,17 @@ hugo_stats.json
 # Dependencies
 node_modules/
 
+# PNPM
+.pnpm-store/
+pnpm-debug.log*
+pnpm-lock.yaml*.backup
+
+# Yarn / NPM / npm pack
+yarn.lock*.backup
+npm-debug.log*
+npm-debug.log*.gz
+npm-cache/
+
 # ============================================================================
 # Environment & Configuration
 # ============================================================================
@@ -36,6 +47,12 @@ node_modules/
 .env
 .env.local
 .env.*.local
+.envrc
+
+# Local config overrides
+.hugo_build.*
+.hugo_private/
+.hugo_rendered/
 
 # ============================================================================
 # Generated Content
@@ -44,6 +61,22 @@ node_modules/
 # Pagefind search index
 pagefind/
 static/pagefind/
+
+# Search index cache (Hugo)
+.hugo_cache/
+
+# ============================================================================
+# Editor / IDE
+# ============================================================================
+
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.swp
+*.swo
 
 # ============================================================================
 # Operating System

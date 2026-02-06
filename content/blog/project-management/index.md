@@ -1,94 +1,49 @@
 ---
-title: ✅ Manage your projects
-summary: Easily manage your projects - create ideation mind maps, Gantt charts, todo lists, and more!
+title: Portfolio prioritization for corrosion-critical assets
+summary: A practical workflow for ranking interventions across infrastructure portfolios.
 date: 2023-10-23
 authors:
   - me
 tags:
-  - Hugo Blox
-  - Markdown
+  - Portfolio
+  - Risk
+  - Maintenance
 image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com)'
 ---
 
-Easily manage your projects - create ideation mind maps, Gantt charts, todo lists, and more!
+When resources are limited, the question is not whether to intervene but **where and when**. A portfolio approach ties
+probabilistic risk to budget and operational constraints.
 
-## Ideation
-
-Hugo Blox supports a Markdown extension for mindmaps.
-
-Simply insert a Markdown code block labelled as `markmap` and optionally set the height of the mindmap as shown in the example below.
-
-Mindmaps can be created by simply writing the items as a Markdown list within the `markmap` code block, indenting each item to create as many sub-levels as you need:
-
-<div class="highlight">
-<pre class="chroma">
-<code>
-```markmap {height="200px"}
-- Hugo Modules
-  - Hugo Blox
-  - netlify
-  - netlify-cms
-  - slides
-```
-</code>
-</pre>
-</div>
-
-renders as
-
-```markmap {height="200px"}
-- Hugo Modules
-  - Hugo Blox
-  - netlify
-  - netlify-cms
-  - slides
-```
-
-## Diagrams
-
-Hugo Blox supports the _Mermaid_ Markdown extension for diagrams.
-
-An example **Gantt diagram**:
-
-    ```mermaid
-    gantt
-    section Section
-    Completed :done,    des1, 2014-01-06,2014-01-08
-    Active        :active,  des2, 2014-01-07, 3d
-    Parallel 1   :         des3, after des1, 1d
-    Parallel 2   :         des4, after des1, 1d
-    Parallel 3   :         des5, after des3, 1d
-    Parallel 4   :         des6, after des4, 1d
-    ```
-
-renders as
+## A simple prioritization workflow
 
 ```mermaid
 gantt
-section Section
-Completed :done,    des1, 2014-01-06,2014-01-08
-Active        :active,  des2, 2014-01-07, 3d
-Parallel 1   :         des3, after des1, 1d
-Parallel 2   :         des4, after des1, 1d
-Parallel 3   :         des5, after des3, 1d
-Parallel 4   :         des6, after des4, 1d
+  title Portfolio Prioritization (Illustrative)
+  dateFormat  YYYY-MM-DD
+  section Intake
+  Data review          :done,    a1, 2023-10-01, 7d
+  Exposure alignment   :active,  a2, after a1, 7d
+  section Modeling
+  Parameter calibration:         b1, after a2, 10d
+  Risk envelopes       :         b2, after b1, 7d
+  section Decisions
+  Action ranking       :         c1, after b2, 7d
+  Budget scheduling    :         c2, after c1, 7d
 ```
 
-## Todo lists
+## Ranking criteria that hold up in review
 
-You can even write your todo lists in Markdown too:
+- Probability of corrosion initiation and propagation
+- Consequence of failure and service disruption
+- Timing sensitivity (cost escalation vs delay)
+- Exposure severity and uncertainty
 
-```markdown
-- [x] Write math example
-  - [x] Write diagram example
-- [ ] Do something else
-```
+## Output formats clients prefer
 
-renders as
+- Ranked asset list with thresholds and triggers
+- Scenario tables for do-nothing vs intervention
+- Portfolio map of exposure classes and risk tiers
 
-- [x] Write math example
-  - [x] Write diagram example
-- [ ] Do something else
-
-## Did you find this page helpful? Consider sharing it 🙌
+If you want us to adapt this to your asset classes (bridges, marine structures, industrial plants), share a sample
+inventory and we will outline a tailored approach.

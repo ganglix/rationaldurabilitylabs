@@ -1,135 +1,42 @@
 ---
-title: 🧠 Sharpen your thinking with a second brain
-summary: Create a personal knowledge base and share your knowledge with your peers.
+title: Building a durability knowledge base
+summary: Organize inspection, exposure, and performance data so it remains usable over decades.
 date: 2023-10-26
 authors:
   - me
 tags:
-  - Second Brain
-  - Markdown
+  - Data
+  - Asset Management
+  - Durability
 image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com)'
 ---
 
-Create a personal knowledge base and share your knowledge with your peers.
+Long-lived infrastructure needs long-lived knowledge. A durability knowledge base keeps inspection results, exposure
+classes, and intervention outcomes structured so the next decision is faster and more defensible.
 
-Hugo Blox web framework empowers you with one of the most flexible note-taking capabilities out there.
+## What to capture
 
-Create a powerful knowledge base that works on top of a local folder of plain text Markdown files.
+- Asset identity: location, geometry, materials, service requirements
+- Exposure profile: chloride, carbonation, moisture, temperature, microclimate
+- Inspection history: dates, methods, findings, data quality notes
+- Intervention history: treatments, repairs, cost, performance
 
-Use it as your second brain, either publicly sharing your knowledge with your peers via your website, or via a private GitHub repository and password-protected site just for yourself.
+## A practical structure
 
-## Mindmaps
-
-Hugo Blox supports a Markdown extension for mindmaps.
-
-With this open format, can even edit your mindmaps in other popular tools such as Obsidian.
-
-Simply insert a Markdown code block labelled as `markmap` and optionally set the height of the mindmap as shown in the example below.
-
-Mindmaps can be created by simply writing the items as a Markdown list within the `markmap` code block, indenting each item to create as many sub-levels as you need:
-
-<div class="highlight">
-<pre class="chroma">
-<code>
-```markmap {height="200px"}
-- Hugo Modules
-  - Hugo Blox
-  - netlify
-  - netlify-cms
-  - slides
-```
-</code>
-</pre>
-</div>
-
-renders as
-
-```markmap {height="200px"}
-- Hugo Modules
-  - Hugo Blox
-  - netlify
-  - netlify-cms
-  - slides
+```mermaid
+graph LR
+  A[Asset] --> B[Exposure Class]
+  A --> C[Inspection]
+  C --> D[Measurement Set]
+  A --> E[Intervention]
+  E --> F[Observed Performance]
 ```
 
-Anh here's a more advanced mindmap with formatting, code blocks, and math:
+## Why it matters
 
-<div class="highlight">
-<pre class="chroma">
-<code>
-```markmap
-- Mindmaps
-  - Links
-    - [Hugo Blox Docs](https://docs.hugoblox.com/)
-    - [Discord Community](https://discord.gg/z8wNYzb)
-    - [GitHub](https://github.com/HugoBlox/kit)
-  - Features
-    - Markdown formatting
-    - **inline** ~~text~~ *styles*
-    - multiline
-      text
-    - `inline code`
-    -
-      ```js
-      console.log('hello');
-      console.log('code block');
-      ```
-    - Math: $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
-```
-</code>
-</pre>
-</div>
+- **Consistency**: the same assumptions can be reused across years
+- **Traceability**: every decision is tied back to data sources
+- **Speed**: new analyses are lighter when the data is clean
 
-renders as
-
-```markmap
-- Mindmaps
-  - Links
-    - [Hugo Blox Docs](https://docs.hugoblox.com/)
-    - [Discord Community](https://discord.gg/z8wNYzb)
-    - [GitHub](https://github.com/HugoBlox/kit)
-  - Features
-    - Markdown formatting
-    - **inline** ~~text~~ *styles*
-    - multiline
-      text
-    - `inline code`
-    -
-      ```js
-      console.log('hello');
-      console.log('code block');
-      ```
-    - Math: $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
-```
-
-## Highlighting
-
-<mark>Highlight</mark> important text with `mark`:
-
-```html
-<mark>Highlighted text</mark>
-```
-
-## Callouts
-
-Use [callouts](https://docs.hugoblox.com/reference/markdown/#callouts) (aka _asides_, _hints_, or _alerts_) to draw attention to notes, tips, and warnings.
-
-Use the `> [!NOTE]` syntax to create a callout.
-
-```markdown
-> [!NOTE]
-> A Markdown aside is useful for displaying notices, hints, or definitions to your readers.
-```
-
-renders as
-
-> [!NOTE]
-> A Markdown aside is useful for displaying notices, hints, or definitions to your readers.
-
-Or use the `warning` callout type so your readers don't miss critical details:
-
-> [!WARNING]
-> A Markdown aside is useful for displaying notices, hints, or definitions to your readers.
-
-## Did you find this page helpful? Consider sharing it 🙌
+If you need help defining the schema for your assets, we can provide a starter template and data dictionary.

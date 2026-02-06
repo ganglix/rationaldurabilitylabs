@@ -1,0 +1,197 @@
+{{ $home := site.Home }}
+{{ $sections := $home.Params.sections }}
+{{ $hero := index (where $sections "id" "top") 0 }}
+{{ $highlights := index (where $sections "id" "highlights") 0 }}
+{{ $mvo := index (where $sections "id" "mvo") 0 }}
+{{ $services := index (where $sections "id" "services") 0 }}
+{{ $offer := index (where $sections "id" "offer") 0 }}
+{{ $process := index (where $sections "id" "process") 0 }}
+{{ $contact := index (where $sections "id" "contact") 0 }}
+
+<!-- PHASE1_HOME_TEMPLATE -->
+<main id="top" class="phase1-home">
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="kicker">
+            <span class="dot" aria-hidden="true"></span>
+            {{ $hero.content.announcement.text }}
+          </div>
+
+          <h1>{{ $hero.content.title }}</h1>
+
+          <div class="lead">{{ $hero.content.text | markdownify }}</div>
+
+          <div class="cta-row">
+            <a class="btn primary" href="{{ $hero.content.primary_action.url }}">
+              {{ $hero.content.primary_action.text }}
+              <span aria-hidden="true">→</span>
+            </a>
+            <a class="btn" href="{{ $hero.content.secondary_action.url }}">
+              {{ $hero.content.secondary_action.text }}
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="trust">
+            <span class="pill">Applied research + industrial validation</span>
+            <span class="pill">Probabilistic service-life modelling</span>
+            <span class="pill">Concrete + metallic corrosion expertise</span>
+          </div>
+        </div>
+
+        <aside class="card">
+          <span class="badge"><span class="check" aria-hidden="true">✓</span> Decision product, not a generic report</span>
+          <h3>{{ $mvo.content.title }}</h3>
+          <div class="small-copy">{{ $mvo.content.text | markdownify }}</div>
+
+          <div class="stats">
+            {{ range $highlights.content.items }}
+            <div class="stat">
+              <strong>{{ .statistic }}</strong>
+              <span>{{ .description }}</span>
+            </div>
+            {{ end }}
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>{{ $services.content.title }}</h2>
+        <p>{{ $services.content.text }}</p>
+      </div>
+
+      <div class="grid-3">
+        {{ range $i, $item := $services.content.items }}
+        <div class="feature">
+          <div class="icon" aria-hidden="true">
+            {{ if eq $i 0 }}
+            <svg viewBox="0 0 24 24" class="icon-svg" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10m6 10V4m6 16v-7m6 7V7"/></svg>
+            {{ else if eq $i 1 }}
+            <svg viewBox="0 0 24 24" class="icon-svg" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 2v6l-5 8a3 3 0 0 0 2.6 4.5h8.8A3 3 0 0 0 19 16l-5-8V2"/><path d="M8 13h8"/></svg>
+            {{ else }}
+            <svg viewBox="0 0 24 24" class="icon-svg" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>
+            {{ end }}
+          </div>
+          <h3>{{ $item.name }}</h3>
+          <p>{{ $item.description }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section id="offer">
+    <div class="container">
+      <div class="section-title">
+        <h2>{{ (index $offer.content.items 0).title }}</h2>
+        <p>{{ (index $offer.content.items 0).text }}</p>
+      </div>
+
+      <div class="offer">
+        <div class="card">
+          <span class="badge"><span class="check" aria-hidden="true">✓</span> What you get</span>
+          <h3>Deliverables</h3>
+          <p>The scope is intentionally streamlined to enable rapid, repeatable delivery.</p>
+          <div class="deliverables">
+            {{ range (index $offer.content.items 0).features }}
+            {{ $parts := split . " - " }}
+            <div class="item">
+              <strong>{{ index $parts 0 }}</strong>
+              <span>{{ delimit (after 1 $parts) " - " }}</span>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge"><span class="check" aria-hidden="true">✓</span> What we need</span>
+          <h3>{{ (index $offer.content.items 1).title }}</h3>
+          <p>{{ (index $offer.content.items 1).text }}</p>
+          <div class="deliverables">
+            {{ range (index $offer.content.items 1).features }}
+            {{ $parts := split . " - " }}
+            <div class="item">
+              <strong>{{ index $parts 0 }}</strong>
+              <span>{{ delimit (after 1 $parts) " - " }}</span>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="container">
+      <div class="section-title">
+        <h2>{{ $process.content.title }}</h2>
+        <p>{{ $process.content.text }}</p>
+      </div>
+      <div class="steps">
+        {{ range $i, $item := $process.content.items }}
+        <div class="step">
+          <span class="n" aria-hidden="true">{{ add $i 1 }}</span>
+          <h4>{{ $item.name }}</h4>
+          <p>{{ $item.description }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>{{ $contact.content.title }}</h2>
+        <p>{{ $contact.content.subtitle }}</p>
+      </div>
+      <div class="contact">
+        <div class="card">
+          <h3>Contact form (static HTML)</h3>
+          <p>This form is front-end only. Connect Formspree, Netlify Forms, or your own endpoint to activate submissions.</p>
+          <form action="{{ $contact.content.form_action }}" method="post">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" autocomplete="name" placeholder="Your name" required />
+            </div>
+            <div>
+              <label for="org">Organization</label>
+              <input id="org" name="organization" autocomplete="organization" placeholder="Company / agency / firm" />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+            </div>
+            <div>
+              <label for="asset">Asset type and environment</label>
+              <textarea id="asset" name="asset" placeholder="Example: RC bridge deck in de-icing salt exposure; available inspection and chloride data; decision horizon 30 years." required></textarea>
+            </div>
+            <button class="btn primary" type="submit">Submit request</button>
+            <p class="fine">By submitting, you consent to being contacted regarding this request. No marketing lists.</p>
+          </form>
+        </div>
+        <aside class="card">
+          <h3>{{ $contact.content.connect_title }}</h3>
+          <p>{{ $contact.content.text }}</p>
+          <div class="deliverables">
+            <div class="item">
+              <strong>{{ $contact.content.prospective.title }}</strong>
+              <span>{{ $contact.content.prospective.text }}</span>
+            </div>
+            <div class="item">
+              <strong>Common outcomes</strong>
+              <span>Prioritized actions, reduced uncertainty, defensible timing</span>
+            </div>
+          </div>
+          <p class="fine">Replace this block with your direct email, phone, and business address when ready.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>

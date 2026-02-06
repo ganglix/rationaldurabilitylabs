@@ -6,15 +6,15 @@ main:
   - name: Home
     url: /#top
     weight: 10
-  - name: Features
-    url: /#features
+  - name: Capabilities
+    url: /#services
     weight: 20
-  - name: Solutions
-    url: /#solutions
+  - name: Minimum viable offering
+    url: /#offer
     weight: 30
-  - name: Resources
+  - name: Process
+    url: /#process
     weight: 40
-    hasChildren: true
-  - parent: Resources
-    name: Blog
-    url: blog/
+  - name: Contact
+    url: /#contact
+    weight: 50
