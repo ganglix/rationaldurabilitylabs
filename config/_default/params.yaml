@@ -116,7 +116,7 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   copyright:
     # Copyright notice - supports {year}, {name}, {license} placeholders
-    notice: "© {year} {name}. All rights reserved."
+    notice: "© {year} {name} All rights reserved."
     license:
       type: custom                      # cc | custom
       allow_derivatives: false

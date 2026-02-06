@@ -34,11 +34,6 @@
             </a>
           </div>
 
-          <div class="trust">
-            <span class="pill">Applied research + industrial validation</span>
-            <span class="pill">Probabilistic service-life modelling</span>
-            <span class="pill">Concrete + metallic corrosion expertise</span>
-          </div>
         </div>
 
         <aside class="card">
@@ -80,6 +75,13 @@
           </div>
           <h3>{{ $item.name }}</h3>
           <p>{{ $item.description }}</p>
+          {{ with $item.points }}
+          <ul>
+            {{ range . }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+          {{ end }}
         </div>
         {{ end }}
       </div>
