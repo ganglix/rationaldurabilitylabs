@@ -197,6 +197,28 @@ sections:
             screening asset portfolios, and supporting capital planning decisions.
 
   # --------------------------------------------------
+  # INSIGHTS
+  # --------------------------------------------------
+  - block: cta-card
+    id: insights
+    content:
+      title: Insights and case studies
+      text: >-
+        Explore practical write-ups on corrosion risk, service-life modelling,
+        and decision workflows.
+      button:
+        text: Visit blog
+        url: /blog
+    design:
+      background:
+        gradient:
+          start: "primary-900"
+          end: "secondary-900"
+      card:
+        text_color: light
+        overlay_opacity: 0.2
+
+  # --------------------------------------------------
   # CONTACT
   # --------------------------------------------------
   - block: contact-info

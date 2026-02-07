@@ -15,6 +15,3 @@ main:
   - name: Process
     url: /#process
     weight: 40
-  - name: Contact
-    url: /#contact
-    weight: 50

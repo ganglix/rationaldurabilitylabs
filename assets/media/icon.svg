@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="rdlIconGradient" x1="96" y1="96" x2="416" y2="416" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7dd3fc"/>
+      <stop offset="0.5" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#86efac"/>
+    </linearGradient>
+    <radialGradient id="rdlIconSheen" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(160 140) rotate(40) scale(280)">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect x="40" y="40" width="432" height="432" rx="136" fill="url(#rdlIconGradient)"/>
+  <rect x="46" y="46" width="420" height="420" rx="130" stroke="#ffffff" stroke-opacity="0.22" stroke-width="6"/>
+  <rect x="40" y="40" width="432" height="432" rx="136" fill="url(#rdlIconSheen)"/>
+</svg>
